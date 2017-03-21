@@ -1,19 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_left_drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.devliu.daylyfirst.activity.MainActivity">
+    android:background="@color/colorAccent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:fitsSystemWindows="true"
+        >
 
-</android.support.constraint.ConstraintLayout>
+        <RelativeLayout
+            android:id="@+id/main_title_bar"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <ImageView
+                android:id="@+id/main_title_user_head"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_main_title_user_head"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"/>
+
+            <LinearLayout
+                android:id="@+id/layout_main_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/main_title"
+                    android:layout_width="80dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_main_title"/>
+
+                <ImageView
+                    android:id="@+id/main_title_refresh"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_main_title_refresh"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/main_title_explore"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_main_title_explore"/>
+
+        </RelativeLayout>
+
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/main_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/zzbackground"
+            app:backgroundAttr="zzbackground"
+            />
+
+    </LinearLayout>
+
+    <!--draeer layout-->
+
+    <include layout="@layout/layout_main_drawer"/>
+
+
+</android.support.v4.widget.DrawerLayout>

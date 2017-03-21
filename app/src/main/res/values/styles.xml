@@ -6,6 +6,38 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <!--日间模式 -->
+    <style name="DayTheme" parent="AppTheme">
+        <item name="zzbackground">@color/dayBackground</item>
+        <item name="zzbackgroundDrawable">@drawable/ic_launcher</item>
+        <item name="zztextColor">@color/dayTextColor</item>
+        <item name="zzItemBackground">@color/dayItemBackground</item>
+    </style>
+    <!--夜间模式 -->
+    <style name="NightTheme" parent="AppTheme">
+        <item name="zzbackground">@color/nightBackground</item>
+        <item name="zzbackgroundDrawable">@color/nightBackground</item>
+        <item name="zztextColor">@color/nightTextColor</item>
+        <item name="zzItemBackground">@color/nightItemBackground</item>
+
+        <item name="colorPrimary">@color/nightBackground</item>
+        <item name="colorPrimaryDark">@color/nightBackground</item>
+        <item name="colorAccent">@color/nightItemBackground</item>
+    </style>
+
+    <style name="DayColorTrans" parent="DayTheme"/>
+
+    <style name="NightColorTrans" parent="NightTheme"/>
+
+    <style name="main_drawer_list">
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:layout_marginLeft">40dp</item>
+        <item name="android:layout_marginRight">10dp</item>
     </style>
 
 </resources>

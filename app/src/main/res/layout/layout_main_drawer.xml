@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="left"
+    android:background="?attr/zzbackground"
+    app:backgroundAttr="zzbackground"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="?attr/colorPrimaryDark"
+        app:backgroundAttr="colorPrimaryDark">
+
+        <LinearLayout
+            android:id="@+id/main_drawer_account"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:visibility="visible"
+            android:background="?attr/colorPrimaryDark"
+            app:backgroundAttr="colorPrimaryDark">
+
+            <ImageView
+                android:id="@+id/main_drawer_account_phone"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/account_icon_mobile"/>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="50dp"/>
+
+            <ImageView
+                android:id="@+id/main_drawer_account_weixin"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/account_icon_weixin"/>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="50dp"/>
+
+            <ImageView
+                android:id="@+id/main_drawer_account_qq"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/account_icon_qzone"/>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="50dp"/>
+
+            <ImageView
+                android:id="@+id/main_drawer_account_weibo"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/account_icon_weibo"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/main_drawer_user_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            android:background="@color/colorPrimaryDark"
+            app:backgroundAttr="colorPrimaryDark">
+
+            <ImageView
+                android:id="@+id/main_drawer_userhead"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:src="@mipmap/ic_launcher"/>
+
+            <TextView
+                android:id="@+id/main_drawer_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="溜号"
+                app:textColorAttr="zztextColor"
+                android:textColor="?attr/zztextColor"
+                android:layout_toRightOf="@id/main_drawer_userhead"
+                android:layout_alignTop="@id/main_drawer_userhead"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"/>
+
+            <TextView
+                android:id="@+id/main_drawer_usergender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="男"
+                app:textColorAttr="zztextColor"
+                android:textColor="?attr/zztextColor"
+                android:layout_toRightOf="@id/main_drawer_userhead"
+                android:layout_alignBottom="@id/main_drawer_userhead"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="20dp"/>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:gravity="center_vertical"
+        app:backgroundAttr="zzItemBackground"
+        android:background="?attr/zzItemBackground">
+
+        <ImageView
+            android:src="@drawable/dynamicicon_leftdrawer"
+            style="@style/main_drawer_list"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="好友动态"
+            app:textColorAttr="zztextColor"
+            android:textColor="?attr/zztextColor"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:gravity="center_vertical"
+        app:backgroundAttr="zzItemBackground"
+        android:background="?attr/zzItemBackground">
+
+        <ImageView
+            android:src="@drawable/activityicon_leftdrawer"
+            style="@style/main_drawer_list"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="我的话题"
+            app:textColorAttr="zztextColor"
+            android:textColor="?attr/zztextColor"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:gravity="center_vertical"
+        app:backgroundAttr="zzItemBackground"
+        android:background="?attr/zzItemBackground">
+
+        <ImageView
+            android:src="@drawable/favoriteicon_leftdrawer"
+            style="@style/main_drawer_list"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="收藏"
+            app:textColorAttr="zztextColor"
+            android:textColor="?attr/zztextColor"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:gravity="center_vertical"
+        app:backgroundAttr="zzItemBackground"
+        android:background="?attr/zzItemBackground">
+
+        <ImageView
+            android:src="@drawable/applyicon_leftdrawer"
+            style="@style/main_drawer_list"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="活动"
+            app:textColorAttr="zztextColor"
+            android:textColor="?attr/zztextColor"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:gravity="center_vertical"
+        app:backgroundAttr="zzItemBackground"
+        android:background="?attr/zzItemBackground">
+
+        <ImageView
+            android:src="@drawable/feedbackicon_leftdrawer"
+            style="@style/main_drawer_list"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="反馈"
+            app:textColorAttr="zztextColor"
+            android:textColor="?attr/zztextColor"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:gravity="center_vertical"
+        app:backgroundAttr="zzItemBackground"
+        android:background="?attr/zzItemBackground">
+
+        <ImageView
+            android:src="@drawable/activityicon_leftdrawer"
+            style="@style/main_drawer_list"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="爆料"
+            app:textColorAttr="zztextColor"
+            android:textColor="?attr/zztextColor"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginLeft="30dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/downloadicon_leftdrawer_pressed"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="离线下载"
+                app:textColorAttr="zztextColor"
+                android:textColor="?attr/zztextColor"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_drawer_night_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginLeft="40dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/nighticon_leftdrawer_pressed"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="夜间模式"
+                app:textColorAttr="zztextColor"
+                android:textColor="?attr/zztextColor"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_marginLeft="40dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/settingicon_leftdrawer_pressed"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="设置"
+                app:textColorAttr="zztextColor"
+                android:textColor="?attr/zztextColor"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
