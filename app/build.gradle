@@ -45,6 +45,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile(name: 'pullToRefresh', ext: 'aar')
     compile(name: 'xutils-3.3.42', ext: 'aar')
+    compile(name: 'jiecaovideoplayer-5.5.2', ext: 'aar')
     compile 'com.android.support:design:25.1.0'
 }
 

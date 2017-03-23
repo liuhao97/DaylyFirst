@@ -110,127 +110,141 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="68dp"
-        android:gravity="center_vertical"
-        app:backgroundAttr="zzItemBackground"
-        android:background="?attr/zzItemBackground">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-        <ImageView
-            android:src="@drawable/dynamicicon_leftdrawer"
-            style="@style/main_drawer_list"/>
+        <LinearLayout
+            android:id="@+id/main_drawer_friend"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:gravity="center_vertical"
+            app:backgroundAttr="zzItemBackground"
+            android:background="?attr/zzItemBackground">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="好友动态"
-            app:textColorAttr="zztextColor"
-            android:textColor="?attr/zztextColor"/>
+            <ImageView
+                android:src="@drawable/dynamicicon_leftdrawer"
+                style="@style/main_drawer_list"/>
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="好友动态"
+                app:textColorAttr="zztextColor"
+                android:textColor="?attr/zztextColor"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="68dp"
-        android:gravity="center_vertical"
-        app:backgroundAttr="zzItemBackground"
-        android:background="?attr/zzItemBackground">
+        </LinearLayout>
 
-        <ImageView
-            android:src="@drawable/activityicon_leftdrawer"
-            style="@style/main_drawer_list"/>
+        <LinearLayout
+            android:id="@+id/main_drawer_discuss"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:gravity="center_vertical"
+            app:backgroundAttr="zzItemBackground"
+            android:background="?attr/zzItemBackground">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="我的话题"
-            app:textColorAttr="zztextColor"
-            android:textColor="?attr/zztextColor"/>
+            <ImageView
+                android:src="@drawable/activityicon_leftdrawer"
+                style="@style/main_drawer_list"/>
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="我的话题"
+                app:textColorAttr="zztextColor"
+                android:textColor="?attr/zztextColor"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="68dp"
-        android:gravity="center_vertical"
-        app:backgroundAttr="zzItemBackground"
-        android:background="?attr/zzItemBackground">
+        </LinearLayout>
 
-        <ImageView
-            android:src="@drawable/favoriteicon_leftdrawer"
-            style="@style/main_drawer_list"/>
+        <LinearLayout
+            android:id="@+id/main_drawer_collect"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:gravity="center_vertical"
+            app:backgroundAttr="zzItemBackground"
+            android:background="?attr/zzItemBackground">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="收藏"
-            app:textColorAttr="zztextColor"
-            android:textColor="?attr/zztextColor"/>
+            <ImageView
+                android:src="@drawable/favoriteicon_leftdrawer"
+                style="@style/main_drawer_list"/>
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="收藏"
+                app:textColorAttr="zztextColor"
+                android:textColor="?attr/zztextColor"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="68dp"
-        android:gravity="center_vertical"
-        app:backgroundAttr="zzItemBackground"
-        android:background="?attr/zzItemBackground">
+        </LinearLayout>
 
-        <ImageView
-            android:src="@drawable/applyicon_leftdrawer"
-            style="@style/main_drawer_list"/>
+        <LinearLayout
+            android:id="@+id/main_drawer_active"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:gravity="center_vertical"
+            app:backgroundAttr="zzItemBackground"
+            android:background="?attr/zzItemBackground">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="活动"
-            app:textColorAttr="zztextColor"
-            android:textColor="?attr/zztextColor"/>
+            <ImageView
+                android:src="@drawable/applyicon_leftdrawer"
+                style="@style/main_drawer_list"/>
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="活动"
+                app:textColorAttr="zztextColor"
+                android:textColor="?attr/zztextColor"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="68dp"
-        android:gravity="center_vertical"
-        app:backgroundAttr="zzItemBackground"
-        android:background="?attr/zzItemBackground">
+        </LinearLayout>
 
-        <ImageView
-            android:src="@drawable/feedbackicon_leftdrawer"
-            style="@style/main_drawer_list"/>
+        <LinearLayout
+            android:id="@+id/main_drawer_refeed"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:gravity="center_vertical"
+            app:backgroundAttr="zzItemBackground"
+            android:background="?attr/zzItemBackground">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="反馈"
-            app:textColorAttr="zztextColor"
-            android:textColor="?attr/zztextColor"/>
+            <ImageView
+                android:src="@drawable/feedbackicon_leftdrawer"
+                style="@style/main_drawer_list"/>
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="反馈"
+                app:textColorAttr="zztextColor"
+                android:textColor="?attr/zztextColor"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="68dp"
-        android:gravity="center_vertical"
-        app:backgroundAttr="zzItemBackground"
-        android:background="?attr/zzItemBackground">
+        </LinearLayout>
 
-        <ImageView
-            android:src="@drawable/activityicon_leftdrawer"
-            style="@style/main_drawer_list"/>
+        <LinearLayout
+            android:id="@+id/main_drawer_reinfo"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:gravity="center_vertical"
+            app:backgroundAttr="zzItemBackground"
+            android:background="?attr/zzItemBackground">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="爆料"
-            app:textColorAttr="zztextColor"
-            android:textColor="?attr/zztextColor"/>
+            <ImageView
+                android:src="@drawable/activityicon_leftdrawer"
+                style="@style/main_drawer_list"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="爆料"
+                app:textColorAttr="zztextColor"
+                android:textColor="?attr/zztextColor"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -241,15 +255,18 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical">
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical"
-            android:layout_marginLeft="30dp">
+            >
 
             <ImageView
                 android:layout_width="30dp"
@@ -268,11 +285,12 @@
 
         <LinearLayout
             android:id="@+id/main_drawer_night_mode"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical"
-            android:layout_marginLeft="40dp">
+            >
 
             <ImageView
                 android:layout_width="30dp"
@@ -290,11 +308,12 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical"
-            android:layout_marginLeft="40dp">
+            >
 
             <ImageView
                 android:layout_width="30dp"

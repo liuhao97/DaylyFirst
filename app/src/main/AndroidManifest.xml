@@ -30,7 +30,8 @@
 
         <activity
             android:name=".activity.MainActivity"
-            android:theme="@style/DayColorTrans">
+            android:theme="@style/DayColorTrans"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

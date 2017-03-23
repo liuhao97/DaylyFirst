@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
 import android.view.View;
@@ -14,7 +17,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.devliu.daylyfirst.R;
+import com.devliu.daylyfirst.adapter.FragPagerAdapter;
 import com.devliu.daylyfirst.base.BaseActivity;
+import com.devliu.daylyfirst.frag.NewsFrag;
+import com.devliu.daylyfirst.frag.VideoFrag;
 import com.devliu.daylyfirst.nightmode.ChangeModeController;
 import com.devliu.daylyfirst.nightmode.ChangeModeHelper;
 import com.umeng.socialize.UMAuthListener;
@@ -24,14 +30,17 @@ import com.umeng.socialize.shareboard.SnsPlatform;
 
 import org.xutils.image.ImageOptions;
 import org.xutils.view.annotation.ContentView;
+import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 @ContentView(R.layout.activity_main)
 public class MainActivity extends BaseActivity {
+
     public ArrayList<SnsPlatform> platforms;
     private SHARE_MEDIA[] list;
     private UMAuthListener authListener;
@@ -39,24 +48,33 @@ public class MainActivity extends BaseActivity {
     private Context mContext;
 
     @ViewInject(R.id.main_title_user_head)
-    ImageView titleUserHead;
-    @ViewInject(R.id.main_left_drawer)
-    DrawerLayout leftDrawer;
-    @ViewInject(R.id.main_drawer_account_qq)
-    ImageView drawerAccountQQ;
-    @ViewInject(R.id.main_drawer_account)
-    LinearLayout drawerAccount;
-    @ViewInject(R.id.main_drawer_user_info)
-    RelativeLayout drawerUserInfo;
-    @ViewInject(R.id.main_drawer_userhead)
-    ImageView drawerUserHead;
-    @ViewInject(R.id.main_drawer_username)
-    TextView drawerUserName;
-    @ViewInject(R.id.main_drawer_usergender)
-    TextView drawerUserGender;
-    @ViewInject(R.id.main_drawer_night_mode)
-    LinearLayout changeMode;
+    private ImageView titleUserHead;
+    @ViewInject(R.id.main_tab_layout)
+    private TabLayout tabLayout;
+    @ViewInject(R.id.main_view_pager)
+    private ViewPager viewPager;
+    @ViewInject(R.id.layout_main_title)
+    private LinearLayout titleLayout;
+    @ViewInject(R.id.main_title_refresh)
+    private ImageView titleRefresh;
 
+    @ViewInject(R.id.main_left_drawer)
+    private DrawerLayout leftDrawer;
+    @ViewInject(R.id.main_drawer_account_qq)
+    private ImageView drawerAccountQQ;
+    @ViewInject(R.id.main_drawer_account)
+    private LinearLayout drawerAccount;
+    @ViewInject(R.id.main_drawer_user_info)
+    private RelativeLayout drawerUserInfo;
+    @ViewInject(R.id.main_drawer_userhead)
+    private ImageView drawerUserHead;
+    @ViewInject(R.id.main_drawer_username)
+    private TextView drawerUserName;
+    @ViewInject(R.id.main_drawer_usergender)
+    private TextView drawerUserGender;
+    @ViewInject(R.id.main_drawer_night_mode)
+    private LinearLayout changeMode;
+    private List<Fragment> fragList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,10 +87,67 @@ public class MainActivity extends BaseActivity {
 
         initVariable();
         initViews();
+        loadPager();
+    }
 
+    private void loadPager() {
+        String [] pathlist =
+                {"T1348647909107",
+                "V9LG4B3A0",
+                "T1399700447917",
+                "T1348648517839",
+                "T1348649079062",
+                "T1348649580692",
+                "T1348654060988"};
+
+        String[] titleList = new String[]
+                {"推荐", "搞笑", "足球", "娱乐", "体育", "科技", "汽车"};
+        fragList = new ArrayList<>();
+        for (int i = 0;i < pathlist.length;i++) {
+            Bundle bundle = new Bundle();
+            bundle.putString("keyurl", pathlist[i]);
+            if(i==1){
+                Fragment fragment = new VideoFrag();
+                fragment.setArguments(bundle);
+                fragList.add(fragment);
+            }else{
+                Fragment fragment = new NewsFrag();
+                fragment.setArguments(bundle);
+                fragList.add(fragment);
+            }
+        }
+
+
+        FragPagerAdapter adapter = new FragPagerAdapter(getSupportFragmentManager(),
+                fragList,
+                titleList);
+        tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+        tabLayout.setupWithViewPager(viewPager);
+        viewPager.setAdapter(adapter);
     }
 
     private void initViews() {
+        leftDrawer.addDrawerListener(new DrawerLayout.DrawerListener() {
+            @Override
+            public void onDrawerSlide(View drawerView, float slideOffset) {
+
+            }
+
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                drawerView.setClickable(true);
+            }
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+
+            }
+
+            @Override
+            public void onDrawerStateChanged(int newState) {
+
+            }
+        });
 
         titleUserHead.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,6 +167,23 @@ public class MainActivity extends BaseActivity {
                 changeMode();
             }
         });
+
+        titleLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                refreshCurFrag();
+            }
+        });
+    }
+
+    private void refreshCurFrag() {
+        int currentItem = viewPager.getCurrentItem();
+        Fragment fragment = fragList.get(currentItem);
+        if(fragment instanceof VideoFrag){
+            VideoFrag videoFrag = (VideoFrag) fragment;
+            videoFrag.autoRefresh();
+        }
+
     }
 
     private void changeMode() {
@@ -209,5 +301,19 @@ public class MainActivity extends BaseActivity {
                 .onSaveInstanceState(outState);
     }
 
+    @Event(value = {R.id.main_drawer_friend,
+    R.id.main_drawer_active,
+    R.id.main_drawer_collect,
+    R.id.main_drawer_refeed,
+    R.id.main_drawer_reinfo,
+    R.id.main_drawer_discuss})
+    private void onClick(View v){
+        Toast.makeText(mActivity, "test", Toast.LENGTH_SHORT).show();
+    }
+
+    private void temp(){
+        int currentItem = viewPager.getCurrentItem();
+        viewPager.getChildAt(currentItem);
+    }
 
 }

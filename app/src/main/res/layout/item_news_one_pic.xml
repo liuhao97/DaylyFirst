@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="?attr/zzItemBackground"
+    app:backgroundAttr="zzItemBackground">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="180dp"
+            android:layout_height="90dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/item_one_topic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="?attr/zztextColor"
+                app:textColorAttr="zztextColor"
+
+                tools:text="刘国梁要下课？国乒发布总教练招聘启事 应聘条件太恐怖"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/item_one_pic"
+            android:layout_width="120dp"
+            android:layout_height="90dp"
+            android:layout_alignParentRight="true"
+
+            tools:src="@mipmap/ic_launcher"/>
+
+        <TextView
+            android:id="@+id/item_one_source"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_one_pic"
+            android:textSize="12sp"
+            android:layout_margin="5dp"
+            android:textColor="?attr/zztextColor"
+            app:textColorAttr="zztextColor"
+
+            tools:text="网易原创"/>
+
+        <TextView
+            android:id="@+id/item_one_comment_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_one_pic"
+            android:layout_toRightOf="@id/item_one_source"
+            android:textSize="12sp"
+            android:layout_margin="5dp"
+            android:textColor="?attr/zztextColor"
+            app:textColorAttr="zztextColor"
+
+            tools:text="43评论"/>
+
+        <ImageView
+            android:id="@+id/item_one_dislike"
+            android:layout_width="28dp"
+            android:layout_height="12dp"
+            android:layout_below="@id/item_one_pic"
+            android:layout_alignParentRight="true"
+            android:layout_margin="5dp"
+            android:src="@drawable/dislikeicon_textpage"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

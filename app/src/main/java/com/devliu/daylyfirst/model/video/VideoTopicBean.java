@@ -1,4 +1,4 @@
-package com.devliu.daylyfirst.model;
+package com.devliu.daylyfirst.model.video;
 
 /**
  * Created by liuhao

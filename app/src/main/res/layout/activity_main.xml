@@ -60,14 +60,22 @@
 
         </RelativeLayout>
 
+        <android.support.design.widget.TabLayout
+            android:id="@+id/main_tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="?attr/zzbackground"
+            app:backgroundAttr="zzbackground"
+            app:tabIndicatorColor="@color/colorAccent"
+            app:tabTextColor="@color/colorPrimaryDark"
+            app:tabSelectedTextColor="@color/colorAccent"/>
 
         <android.support.v4.view.ViewPager
             android:id="@+id/main_view_pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="?attr/zzbackground"
-            app:backgroundAttr="zzbackground"
-            />
+            app:backgroundAttr="zzbackground"/>
 
     </LinearLayout>
 

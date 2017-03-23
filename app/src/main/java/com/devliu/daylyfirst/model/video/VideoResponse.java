@@ -1,4 +1,4 @@
-package com.devliu.daylyfirst.model;
+package com.devliu.daylyfirst.model.video;
 
 /**
  * Created by liuhao
@@ -6,7 +6,7 @@ package com.devliu.daylyfirst.model;
  * use to :
  */
 
-public class V9LG4B3A0Bean {
+public class VideoResponse {
     private String topicImg;
     private String videosource;
     private Object mp4Hd_url;
